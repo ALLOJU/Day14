@@ -13,6 +13,8 @@ public class Main {
 		 * 1. Creating Lined list
 		 * 2. Adding nodes to linkedList
 		 * 3. Printing linedList after adding nodes
+		 * 4.Adding nodes  to the list
+		 * 5. Printing linedList after adding nodes
 		 */
 
 		/*
@@ -23,16 +25,18 @@ public class Main {
 		/*
 		 * 2. Adding nodes to linkedList
 		 */
-		Node head = list.addNode(null,56);
-		list.addNode(head, 30);
-		list.addNode(head, 70);
+		Node head = list.addNodeLast(null,56);
+		list.addNodeLast(head, 30);
+		list.addNodeLast(head, 70);
+
+
 		/*
 		 * 3. Printing linedList after adding nodes
 		 */
+
 		list.printLinkedList(head);
 		System.out.println();
-
-
+		
 
 	}
 
