@@ -36,6 +36,7 @@ public class Main {
 			System.out.println("Please Enter 4 to delete At starting position of linked list");
 			System.out.println("Please Enter 5 to delete At Last element of linked list");
 			System.out.println("Please Enter 6 to Search element of linked list");
+			System.out.println("Please Enter 7 to Search element and insert after search of linked list");
 
 			Scanner sc=new Scanner(System.in);
 			n=sc.nextInt();
@@ -79,7 +80,7 @@ public class Main {
 				 * 6.Adding element at middle of linked list
 				 * */
 				LinkedList sList=new LinkedList();
-				
+
 				//sList.appendNode(head,70);  
 				sList.addNode(56);  
 				sList.addNode(70);  
@@ -90,12 +91,12 @@ public class Main {
 				sList.addInMid(30);  
 				System.out.println( "Updated List: ");  
 				sList.display();  
-				 
+
 				break;
 			case 4:
 				/*
-				* 7. Deleting node from start of the linkedlist
-				*/
+				 * 7. Deleting node from start of the linkedlist
+				 */
 				head = list.appendNode(null,56);
 				list.appendNode(head, 30);
 				list.appendNode(head, 70);
@@ -104,20 +105,20 @@ public class Main {
 				head = list.deleteNodeFromStart(head);
 
 				/*
-				* Printing linedList after deleting node from start of the linkedlist
-				*/
-				
+				 * Printing linedList after deleting node from start of the linkedlist
+				 */
+
 				list.printLinkedList(head);
 				System.out.println();
 				/*
-				* Printing linedList after deleting node from start of the linkedlist
-				*/
+				 * Printing linedList after deleting node from start of the linkedlist
+				 */
 				System.out.println();
 				break;
 			case 5:
 				/*
-				* 8. Deleting node from end of the linkedlist
-				*/
+				 * 8. Deleting node from end of the linkedlist
+				 */
 				head = list.appendNode(null,56);
 				list.appendNode(head, 30);
 				list.appendNode(head, 70);
@@ -126,16 +127,16 @@ public class Main {
 				list.deleteNodeFromEnd(head);
 
 				/*
-				*  Printing linedList after deleting node from end of the linkedlist
-				*/
+				 *  Printing linedList after deleting node from end of the linkedlist
+				 */
 				list.printLinkedList(head);
 				break;
 			case 6:
 				/*
-				* 9. Search node from end of the linkedlist
-				*/
+				 * 9. Search node from end of the linkedlist
+				 */
 				LinkedList searchList=new LinkedList();
-				
+
 				//sList.appendNode(head,70);  
 				searchList.addNode(56);
 				searchList.addNode(30);  
@@ -144,6 +145,20 @@ public class Main {
 				System.out.println("Original list : ");  
 				searchList.display();  
 				searchList.searchNode(30); 
+				break;
+			case 7:
+				LinkedList s=new LinkedList();
+
+				//sList.appendNode(head,70);  
+				s.addNode(56);
+				s.addNode(30);  
+				s.addNode(70);  
+
+				System.out.println("Original list : ");  
+				s.display();  
+				s.insertAtsearchNode(30);
+				s.display();
+
 			}
 
 		}while(n!=0);

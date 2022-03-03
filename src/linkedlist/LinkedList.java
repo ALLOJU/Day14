@@ -112,6 +112,19 @@ public class LinkedList {
 		System.out.println("Deleted node from end : " + pointer.data);
 		prev.next = null;
 	}
+	public void insert(Node node, int new_data)
+	{
+	
+		if (node == null) {
+			System.out.println("The given  node cannot be null");
+			return;
+		}
+
+		Node new_node = new Node(new_data);
+
+			new_node.next = node.next;
+		    node.next = new_node;
+	}
 	/*
 	 * Search element from linked list*/
 	public void searchNode(int data) {  
@@ -135,9 +148,78 @@ public class LinkedList {
         }  
         if(flag)  
              System.out.println("Element is present in the list at the position : " + i);  
+        	
         else  
              System.out.println("Element is not present in the list");  
     }  
+	public void insertAtsearchNode(int data) {  
+        Node current = head;  
+        int i = 1;  
+        boolean flag = false;  
+        //Checks whether list is empty  
+        if(head == null) {  
+            System.out.println("List is empty");  
+        }  
+        else {  
+            while(current != null) {  
+                 //Compares node to be found with each node present in the list  
+                if(current.data == data) {  
+                    flag = true;  
+                    break;  
+                }  
+                i++;  
+                current = current.next;  
+            }  
+        }  
+        if(flag) {  
+        	int data1=40;
+             System.out.println("Element is present in the list at the position : " + i);
+        	insertNth(head,data1,i);
+        }
+        else  
+             System.out.println("Element is not present in the list");  
+    }  
+	
+	public void insertNth(Node head,int data, int position) {
+	    //create new node.
+	    Node node = new Node(data);
+	    node.data = data;
+	    node.next = null;
+
+	    if (head == null) {
+	      //if head is null and position is zero then exit.
+	      if (position != 0) {
+	       return;
+	      } else { //node set to the head.
+	       head = node;
+	      }
+	    }
+
+	    if (head != null && position == 0) {
+	      node.next = head;
+	      head = node;
+	      return;
+	    }
+
+	    Node current = this.head;
+	    Node previous = null;
+
+	    int i = 0;
+
+	    while (i < position) {
+	      previous = current;
+	      current = current.next;
+
+	      if (current == null) {
+	        break;
+	      }
+
+	       i++;
+	      }
+
+	      node.next = current;
+	      previous.next = node;
+	}
 	public void addNode(int data) {  
 		Node newNode = new Node(data);  
 
