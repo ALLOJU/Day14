@@ -3,14 +3,19 @@ package linkedlist;
 public class LinkedList {
 
 	/**
-	 * addNodeLast - this method is created to add data to linedList
+	 * appendNode - this method is created to add data to linedList
 	 * printLinkedList-this method display the values of linked list
 	 * addAtStart  - this method is used to add no at start of the linked list
+	 * addInMid - Method to insert element at middle of the list
+
 	 * @param head - accepting head pointer of LinkedList to manipulate it
 	 * @param data - accepting data to put it in linkedList
 	 * @return head - it returns head of linkedList
 	 *
 	 */
+	public static Node head = null;  
+	public Node tail = null;  
+	public int size;
 	public Node appendNode(Node head, int data) {
 
 		Node newNode = new Node(data);
@@ -28,8 +33,7 @@ public class LinkedList {
 
 		return head;
 	}
-	public Node head = null;  
-	public Node tail = null;  
+
 	//addAtStart() will add a new node to the beginning of the list  
 	public void addAtStart(int data) {  
 
@@ -51,9 +55,9 @@ public class LinkedList {
 		}  
 	}  
 
+
 	//display() will display all the nodes present in the list  
 	public void display() {  
-		System.out.println("Adding nodes to the Start of the list: ");  
 
 		//Node current will point to head  
 		Node current = head;  
@@ -70,6 +74,8 @@ public class LinkedList {
 		System.out.println();  
 	}  
 
+
+
 	public void printLinkedList(Node head){
 		System.out.println("Adding nodes to the End of the list: ");  
 		if (head == null) {
@@ -84,5 +90,47 @@ public class LinkedList {
 			}
 		} 
 	}
+	/*
+	 * Method to insert element at middle of the list*/
+	public void addInMid(int data){  
+		Node newNode = new Node(data);  
 
-}
+		if(head == null) {  
+			head = newNode;  
+			tail = newNode;  
+		}  
+		else {  
+			Node temp, current;  
+			int count = (size % 2 == 0) ? (size/2) : ((size+1)/2);  
+			temp = head;  
+			current = null;  
+
+			for(int i = 0; i < count; i++) {  
+				current = temp;  
+				temp = temp.next;  
+			}  
+
+			current.next = newNode;  
+			newNode.next = temp;  
+		}  
+		size++;  
+	}  
+	
+
+	public void addNode(int data) {  
+		Node newNode = new Node(data);  
+
+		if(head == null) {  
+			head = newNode;  
+			tail = newNode;  
+		}  
+		else {  
+			tail.next = newNode;  
+			tail = newNode;  
+		}  
+		size++;  
+	}  
+
+}  
+
+

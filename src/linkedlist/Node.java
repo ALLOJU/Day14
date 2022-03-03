@@ -9,8 +9,6 @@ public class Node {
 		this.data = data;
 		this.next = null;
 	}
-	public Node() {
-		// TODO Auto-generated constructor stub
-	}
+	
 	
 }
