@@ -25,9 +25,9 @@ public class Main {
 		/*
 		 * 2. Adding nodes to linkedList
 		 */
-		Node head = list.addNodeLast(null,56);
-		list.addNodeLast(head, 30);
-		list.addNodeLast(head, 70);
+		Node head = list.appendNode(null,56);
+		list.appendNode(head, 30);
+		list.appendNode(head, 70);
 
 
 		/*

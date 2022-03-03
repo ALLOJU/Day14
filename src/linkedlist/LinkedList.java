@@ -11,7 +11,7 @@ public class LinkedList {
 	 * @return head - it returns head of linkedList
 	 *
 	 */
-	public Node addNodeLast(Node head, int data) {
+	public Node appendNode(Node head, int data) {
 
 		Node newNode = new Node(data);
 		if (head == null) {
