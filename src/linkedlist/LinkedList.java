@@ -9,6 +9,10 @@ public class LinkedList {
 	 * addInMid - Method to insert element at middle of the list
 	 * deleteNodeFromStart - Delete Node from starting of linked list
 	 * deleteNodeFromEnd - Delete Node from End of linked list
+	 * searchNode   - Search node at particular position
+	 * insertAtsearchNode -  Insert element after search element
+	 * deleteAtsearchNode - delete the node at search element position
+	 * sortList   - Sort elements of Linked list in ascending order
 
 	 * @param head - accepting head pointer of LinkedList to manipulate it
 	 * @param data - accepting data to put it in linkedList
@@ -112,19 +116,6 @@ public class LinkedList {
 		System.out.println("Deleted node from end : " + pointer.data);
 		prev.next = null;
 	}
-	public void insert(Node node, int new_data)
-	{
-	
-		if (node == null) {
-			System.out.println("The given  node cannot be null");
-			return;
-		}
-
-		Node new_node = new Node(new_data);
-
-			new_node.next = node.next;
-		    node.next = new_node;
-	}
 	/*
 	 * Search element from linked list*/
 	public void searchNode(int data) {  
@@ -205,7 +196,43 @@ public class LinkedList {
         }
         else  
              System.out.println("Element is not present in the list");  
-    }  
+    } 
+	 // sortList() will sort nodes of the list in ascending
+    // order
+    public void sortList()
+    {
+ 
+        // Node current will point to head
+        Node current = head, index = null;
+ 
+        int temp;
+ 
+        if (head == null) {
+            return;
+        }
+        else {
+            while (current != null) {
+                // Node index will point to node next to
+                // current
+                index = current.next;
+ 
+                while (index != null) {
+                    // If current node's data is greater
+                    // than index's node data, swap the data
+                    // between them
+                    if (current.data > index.data) {
+                        temp = current.data;
+                        current.data = index.data;
+                        index.data = temp;
+                    }
+ 
+                    index = index.next;
+                }
+                current = current.next;
+            }
+        }
+    }
+ 
 	public void insertNth(Node head,int data, int position) {
 	    //create new node.
 	    Node node = new Node(data);
@@ -227,7 +254,7 @@ public class LinkedList {
 	      return;
 	    }
 
-	    Node current = this.head;
+	    Node current = head;
 	    Node previous = null;
 
 	    int i = 0;

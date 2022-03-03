@@ -20,6 +20,10 @@ public class Main {
 		 * 6.Adding element at midle of linked list
 		 * 7.delete node from the start of linked list
 		 * 8.delete node from the end of linked list
+		 * 9. Search node from  the linkedlist
+		 * 10. Search node from the list and insert after that search  element
+		 * 11. Search node from the list and delete that search  element
+		 * 12. Sorting linked list
 		 */
 
 		/*
@@ -38,6 +42,7 @@ public class Main {
 			System.out.println("Please Enter 6 to Search element of linked list");
 			System.out.println("Please Enter 7 to Search element and insert after search of linked list");
 			System.out.println("Please Enter 8 to Search element and delete after search of linked list");
+			System.out.println("Please Enter 9 to get Sorted linked list");
 
 			Scanner sc=new Scanner(System.in);
 			n=sc.nextInt();
@@ -134,7 +139,7 @@ public class Main {
 				break;
 			case 6:
 				/*
-				 * 9. Search node from end of the linkedlist
+				 * 9. Search node from  the linkedlist
 				 */
 				LinkedList searchList=new LinkedList();
 
@@ -148,6 +153,9 @@ public class Main {
 				searchList.searchNode(30); 
 				break;
 			case 7:
+				/*
+				 * 10. Search node from the list and insert after that search  element
+				 */
 				LinkedList s=new LinkedList();
 
 				//sList.appendNode(head,70);  
@@ -161,6 +169,9 @@ public class Main {
 				s.display();
 				break;
 			case 8:
+				/*
+				 * 11. Search node from the list and delete that search  element
+				 */
 				LinkedList sl=new LinkedList();
 
 				//sList.appendNode(head,70);  
@@ -174,6 +185,24 @@ public class Main {
 				sl.deleteAtsearchNode(40);
 				sl.display();
 				break;
+			
+			case 9:
+				/*
+				 * 12. Sorting linked list
+				 */
+				LinkedList sort=new LinkedList();
+
+				//sList.appendNode(head,70);  
+				sort.addNode(56);
+				sort.addNode(30);
+				sort.addNode(40);
+				sort.addNode(70);  
+
+				System.out.println("Original list : ");  
+				sort.display();  
+				System.out.println("Linked list after sorting");
+				sort.sortList();
+				sort.display();
 
 			}
 
