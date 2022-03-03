@@ -90,47 +90,65 @@ public class LinkedList {
 			}
 		} 
 	}
-	/*
-	 * Method to insert element at middle of the list*/
-	public void addInMid(int data){  
-		Node newNode = new Node(data);  
 
-		if(head == null) {  
-			head = newNode;  
-			tail = newNode;  
-		}  
-		else {  
-			Node temp, current;  
-			int count = (size % 2 == 0) ? (size/2) : ((size+1)/2);  
-			temp = head;  
-			current = null;  
-
-			for(int i = 0; i < count; i++) {  
-				current = temp;  
-				temp = temp.next;  
-			}  
-
-			current.next = newNode;  
-			newNode.next = temp;  
-		}  
-		size++;  
-	}  
-	
-
+	/* Delete Node from starting of linked list*/
+	public Node deleteNodeFromStart(Node head) {
+		System.out.println("Deleted node from start : " + head.data);
+		head = head.next;
+		return head;
+	}
 	public void addNode(int data) {  
 		Node newNode = new Node(data);  
 
 		if(head == null) {  
-			head = newNode;  
-			tail = newNode;  
+		head = newNode;  
+		tail = newNode;  
 		}  
 		else {  
-			tail.next = newNode;  
-			tail = newNode;  
+		tail.next = newNode;  
+		tail = newNode;  
 		}  
 		size++;  
-	}  
+		}  
 
+		public void addInMid(int data){  
+		Node newNode = new Node(data);  
+
+		if(head == null) {  
+		head = newNode;  
+		tail = newNode;  
+		}  
+		else {  
+		Node temp, current;  
+		int count = (size % 2 == 0) ? (size/2) : ((size+1)/2);  
+		temp = head;  
+		current = null;  
+
+		for(int i = 0; i < count; i++) {  
+		    current = temp;  
+		    temp = temp.next;  
+		}  
+
+		current.next = newNode;  
+		newNode.next = temp;  
+		}  
+		size++;  
+		}  
+
+		public void displayNode() {  
+		Node current = head;  
+		if(head == null) {  
+		System.out.println("List is empty");  
+		return;  
+		}  
+
+		while(current != null) {  
+		System.out.print(current.data + " ");  
+		current = current.next;  
+		}  
+		System.out.println();  
+		}  
+	
 }  
 
 
