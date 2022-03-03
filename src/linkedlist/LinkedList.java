@@ -179,7 +179,33 @@ public class LinkedList {
         else  
              System.out.println("Element is not present in the list");  
     }  
-	
+	public void deleteAtsearchNode(int data) {  
+        Node current = head;  
+        int i = 1;  
+        boolean flag = false;  
+        //Checks whether list is empty  
+        if(head == null) {  
+            System.out.println("List is empty");  
+        }  
+        else {  
+            while(current != null) {  
+                 //Compares node to be found with each node present in the list  
+                if(current.data == data) {  
+                    flag = true;  
+                    break;  
+                }  
+                i++;  
+                current = current.next;  
+            }  
+        }  
+        if(flag) {  
+        	int data1=40;
+             System.out.println("Element is present in the list at the position : " + i);
+             deleteFromSpecificLocation(head, i);
+        }
+        else  
+             System.out.println("Element is not present in the list");  
+    }  
 	public void insertNth(Node head,int data, int position) {
 	    //create new node.
 	    Node node = new Node(data);
@@ -271,6 +297,31 @@ public class LinkedList {
 		}  
 		System.out.println();  
 		}  
+		public void deleteFromSpecificLocation(Node head, int position) {
+			 if(position < 1) {
+			      System.out.print("\nposition should be >= 1.");
+			    } else if (position == 1 && head != null) {
+			      Node nodeToDelete = head;
+			      head = head.next;
+			      nodeToDelete = null;
+			    } else {
+			      Node pointer;
+			      
+			      pointer = head;
+			      for(int i = 1; i < position-1; i++) {
+			        if(pointer != null) {
+			        	pointer = pointer.next;
+			        }
+			      }
+			      if(pointer != null && pointer.next != null) {
+			        Node nodeToDelete = pointer.next;
+			        pointer.next = pointer.next.next; 
+			        nodeToDelete = null; 
+			      } else {
+			        System.out.print("\nThe node is already null.");
+			      }       
+			    }
+		}
 	
 }  
 

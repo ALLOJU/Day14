@@ -37,6 +37,7 @@ public class Main {
 			System.out.println("Please Enter 5 to delete At Last element of linked list");
 			System.out.println("Please Enter 6 to Search element of linked list");
 			System.out.println("Please Enter 7 to Search element and insert after search of linked list");
+			System.out.println("Please Enter 8 to Search element and delete after search of linked list");
 
 			Scanner sc=new Scanner(System.in);
 			n=sc.nextInt();
@@ -158,6 +159,21 @@ public class Main {
 				s.display();  
 				s.insertAtsearchNode(30);
 				s.display();
+				break;
+			case 8:
+				LinkedList sl=new LinkedList();
+
+				//sList.appendNode(head,70);  
+				sl.addNode(56);
+				sl.addNode(30);
+				sl.addNode(40);
+				sl.addNode(70);  
+
+				System.out.println("Original list : ");  
+				sl.display();  
+				sl.deleteAtsearchNode(40);
+				sl.display();
+				break;
 
 			}
 
