@@ -19,6 +19,7 @@ public class Main {
 		 * 5. Printing linedList after adding nodes
 		 * 6.Adding element at midle of linked list
 		 * 7.delete node from the start of linked list
+		 * 8.delete node from the end of linked list
 		 */
 
 		/*
@@ -33,6 +34,8 @@ public class Main {
 			System.out.println("Please Enter 2 to add At start position of linked list");
 			System.out.println("Please Enter 3 to add At middle position of linked list");
 			System.out.println("Please Enter 4 to delete At starting position of linked list");
+			System.out.println("Please Enter 5 to delete At Last element of linked list");
+
 			Scanner sc=new Scanner(System.in);
 			n=sc.nextInt();
 			switch(n){
@@ -100,16 +103,31 @@ public class Main {
 				head = list.deleteNodeFromStart(head);
 
 				/*
-				* 5. Printing linedList after deleting node from start of the linkedlist
+				* Printing linedList after deleting node from start of the linkedlist
 				*/
 				
 				list.printLinkedList(head);
 				System.out.println();
 				/*
-				* 8. Printing linedList after deleting node from start of the linkedlist
+				* Printing linedList after deleting node from start of the linkedlist
 				*/
 				System.out.println();
+				break;
+			case 5:
+				/*
+				* 8. Deleting node from end of the linkedlist
+				*/
+				head = list.appendNode(null,56);
+				list.appendNode(head, 30);
+				list.appendNode(head, 70);
+				list.printLinkedList(head);
+				System.out.println();
+				list.deleteNodeFromEnd(head);
 
+				/*
+				*  Printing linedList after deleting node from end of the linkedlist
+				*/
+				list.printLinkedList(head);
 			}
 
 		}while(n!=0);

@@ -7,6 +7,8 @@ public class LinkedList {
 	 * printLinkedList-this method display the values of linked list
 	 * addAtStart  - this method is used to add no at start of the linked list
 	 * addInMid - Method to insert element at middle of the list
+	 * deleteNodeFromStart - Delete Node from starting of linked list
+	 * deleteNodeFromEnd - Delete Node from End of linked list
 
 	 * @param head - accepting head pointer of LinkedList to manipulate it
 	 * @param data - accepting data to put it in linkedList
@@ -96,6 +98,19 @@ public class LinkedList {
 		System.out.println("Deleted node from start : " + head.data);
 		head = head.next;
 		return head;
+	}
+	/*
+	 * delete node from end of the list*/
+	public void deleteNodeFromEnd(Node head) {
+		Node pointer = head;
+		Node prev = null;
+
+		while (pointer.next != null) {
+			prev = pointer;
+			pointer = pointer.next;
+		}
+		System.out.println("Deleted node from end : " + pointer.data);
+		prev.next = null;
 	}
 	public void addNode(int data) {  
 		Node newNode = new Node(data);  
